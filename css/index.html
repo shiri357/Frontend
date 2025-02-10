@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- internal css -->
+     <style>
+     h1{
+        color: red;
+     }
+     /* class selector */
+      .as{
+        color: blueviolet;
+      }
+      /* id selector */
+      #ab{
+        color: aquamarine;
+      }
+      /* universal selector */
+      *{
+        background-color: brown;
+      }
+      /* descendant selector */
+      div{
+        color: beige;
+      }
+      /* child selector */
+      h1>div{
+        color: blue;
+      }
+     </style>
+     </head>
+</head>
+<body>
+    <!-- external css -->
+     <link rel="stylesheet" href="style.css">
+
+    <!-- inline css -->
+     <h1 style="background-color: aqua;">shirisha</h1>
+     <!-- class selector -->
+      <h1><p class="as">shirisha</p></h1>
+      <!-- id selector -->
+       <h1><p id="ab">Shirisha</p><h1></h1>
+       <!-- descendant selector -->
+        <h1>shirisha
+        <div>css</div>
+        </h1>
+        <!-- child selector -->
+         <h1>
+            <div>shirisha
+                <p>shirisha</p>
+            </div>
+         </h1>
+
+</body>
+</html>
