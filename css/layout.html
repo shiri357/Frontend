@@ -4,41 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
-    .ab{
-        display: flex;
-        height: 50vh;
-        background-color: bisque;
-        flex-direction: column-reverse;
-        justify-content: space-around;
-        align-items: center;
-    }
-</style>
-<style>
-    .gridcontainer{
-        display: grid;
-        grid-template-columns: 100px 200px;
-        grid-template-rows: 50px 100px;
-        gap: 10px;
-    }
-    .griditem{
-        background-color: blue;
-        font-size: 50px;
-    }
-</style>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-around;
+            align-items:end;
+            flex-wrap: nowrap;
+        }
+    </style>
+</head>  
 <body>
-    <div class="ab">
-        <div>shirisha</div>
-        <div>shirisha</div>
-        <div>shirisha</div>
-    </div>
-    <!-- grid layout -->
-     <div class="gridcontainer">
-        <div class="griditem">1</div>
-        <div class="griditem">2</div>
-        <div class="griditem">3</div>
-        <div class="griditem">4</div>
-     </div>
+    <!-- display-flex -->
+    <div class="container">
+        <div>abcd</div>
+        <div>efgh</div>
+        <div>ijkl</div>
 </body>
 </html>
