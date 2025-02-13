@@ -4,21 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <
     <style>
+        /* grid layout */
         .container{
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: space-around;
-            align-items:end;
-            flex-wrap: nowrap;
+            display: grid;
+            grid-template-columns: 100px 200px;
+            grid-template-rows: 150px 100px;
+            gap: 10px;
+        }
+        .item{
+            background-color: aqua;
+            padding: 15px;
+            font-size: 25px;
+            font-style:italic;
+        }
+    </style>
+    <style>
+        /* repeat function */
+        .grid-container{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows: repeat(2,100px);
+            gap: 10px;
+        }
+        /* using diffret classes */
+        .grid-item1{
+            grid-column: 1/3;
+            background-color: black;
+        }
+
+        .grid-item{
+            background-color: aqua;
+            padding: 15px;
+            font-size: 25px;
+        }
+    </style>
+    <style>
+        .-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+        }
+        .grid{
+            background-color:grey;
+            font-size: 25px;
+            font-style:italic;
         }
     </style>
 </head>  
 <body>
-    <!-- display-flex -->
-    <div class="container">
-        <div>abcd</div>
-        <div>efgh</div>
-        <div>ijkl</div>
+        <!-- grid layout -->
+         <div class="container">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+            <div class="item">item4</div>
+         </div>
+         <!-- repeat function -->
+         <div class=" grid-container">
+         <div class="grid-item1">item1</div>
+         <div class="grid-item">item2</div>
+         <div class="grid-item">item3</div>
+         <div class="grid-item">item4</div>
+         <div class="grid-item">item5</div>
+         <div class="grid-item">item6</div>
+      </div>
+      <!--auto fit min max -->
+      <div class="-container">
+        <div class="grid">item1</div>
+        <div class="grid">item2</div>
+        <div class="grid">item3</div>
+        <div class="grid">item4</div>
+        <div class="grid">item5</div>
+        <div class="grid">item6</div>
+     </div>
 </body>
 </html>
