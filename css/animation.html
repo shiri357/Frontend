@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            font-style:bold;
+            background-color: black;
+            position: fixed;
+            animation-name: a;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            border: 100px groove red;
+
+
+        }
+        @keyframes a {
+            10%{right:10px;background-color: blue;}
+            50%{left:30px;background-color: brown;font-style: italic;}
+            100%{right: 100px;background-color: blue;transform: scale(1.5) rotate(160);}
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">shirisha</div>
+</body>
+</html>
