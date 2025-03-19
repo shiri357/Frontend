@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch GitHub User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            margin-top: 20px;
+            display: none;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>GitHub User Info</h1>
+    <button onclick="githubUser()">Fetch GitHub User Data</button>
+    
+    <div id="userContainer" class="container"></div>
+    <p id="errorMessage" class="error"></p>
+
+    <script>
+        function githubUser() {
+            let username = "shiri357";
+            let url = `https://api.github.com/users/${username}`;
+            let container = document.getElementById("userContainer");
+            let errorMessage = document.getElementById("errorMessage");
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    container.innerHTML = `
+                        <img src="${data.avatar_url}" alt="Avatar">
+                        <h3>${data.name || data.login}</h3>
+                        <p><strong>Username:</strong> ${data.login}</p>
+                        <p><strong>Followers:</strong> ${data.followers}</p>
+                        <p><strong>Following:</strong> ${data.following}</p>
+                        <p><strong>Public Repos:</strong> ${data.public_repos}</p>
+                        <a href="${data.html_url}" target="_blank">View Profile</a>
+                    `;
+
+                    container.style.display = "block";
+                    errorMessage.textContent = ""; 
+                })
+                .catch(error => {
+                    errorMessage.textContent = "Error fetching data. Please try again!";
+                    container.style.display = "none";
+                    console.error("Error fetching data:", error);
+                });
+        }
+    </script>
+</body>
+</html>
